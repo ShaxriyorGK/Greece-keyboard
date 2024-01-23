@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Page title</title>
+  
+  <style>
+    
+    p {
+      width: 282px;
+      height: 30px;
+      border: solid #1577ff 3px;
+      border-radius: 4px;
+      margin: auto;
+      background-color: white;
+    }
+    
+    .cell{
+      width: 140px;
+      height: 30px;
+      background-color: #55eaff;
+      margin: 2px;
+      border: solid 1px;
+    }
+    
+    .btn{
+      width: 20px;
+      height: 20px;
+      border: solid;
+      background-color: #b5ffaa;
+      border-radius: 4px;
+      margin: 4px;
+    }
+    
+    .container{
+      border: none;
+      background-color: #00ccff;
+      padding: 3px;
+      border-radius: 16px;
+    }
+    
+    img{
+      width: 300px;
+    }
+    
+  </style>
+  
+</head>
+<body align="center">
+  
+  <h2>Write chars and copy to use it</h2>
+ 
+ <div class="container">
+  <div>
+   <p id="display"></p>
+   <button onclick="copyc()" class="cell">COPY</button>
+   <button onclick="cleard()" class="cell">CLEAR</button>
+  </div>
+   <br>
+ 
+  <div>
+   <button onclick="addc('θ')" class="btn">θ</button>
+   <button onclick="addc('ω')" class="btn">ω</button>
+   <button onclick="addc('ε')" class="btn">ε</button>
+   <button onclick="addc('ρ')" class="btn">ρ</button>
+   <button onclick="addc('τ')" class="btn">τ</button>
+   <button onclick="addc('ψ')" class="btn">ψ</button>
+   <button onclick="addc('υ')" class="btn">υ</button>
+   <button onclick="addc('ι')" class="btn">ι</button>
+   <button onclick="addc('ο')" class="btn">ο</button>
+   <button onclick="addc('π')" class="btn">π</button>
+  </div>
+   <br>
+  <div>
+   <button onclick="addc('α')" class="btn">α</button>
+   <button onclick="addc('σ')" class="btn">σ</button>
+   <button onclick="addc('δ')" class="btn">δ</button>
+   <button onclick="addc('φ')" class="btn">φ</button>
+   <button onclick="addc('γ')" class="btn">γ</button>
+   <button onclick="addc('η')" class="btn">η</button>
+   <button onclick="addc('ς')" class="btn">ς</button>
+   <button onclick="addc('κ')" class="btn">κ</button>
+   <button onclick="addc('λ')" class="btn">λ</button>
+  </div>
+   <br>
+  <div>
+   <button onclick="addc('ζ')" class="btn">ζ</button>
+   <button onclick="addc('χ')" class="btn">χ</button>
+   <button onclick="addc('ξ')" class="btn">ξ</button>
+   <button onclick="addc('β')" class="btn">β</button>
+   <button onclick="addc('Ξ')" class="btn">Ξ</button>
+   <button onclick="addc('μ')" class="btn">μ</button>
+   <button onclick="addc('Ω')" class="btn">Ω</button>
+   <button onclick="addc('Σ')" class="btn">Σ</button>
+  </div>
+ </div>
+ <div>
+  <h2>Display greece chars on a webpage</h2>
+  <img src="chars.png">
+ </div>
+
+  <script>
+    
+    var char = '';
+    
+    function addc(input) {
+      char += input;
+      document.getElementById('display').innerHTML = char;
+    }
+    
+    function copyc() {
+      const copyText = document.getElementById('display');
+      const textArea = document.createElement('textarea');
+      textArea.value = copyText.textContent;
+
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textArea);
+    }
+    
+    function cleard() {
+      char = '';
+      document.getElementById('display').innerHTML = char;
+    }
+
+  </script>    
+ 
+</body>
+</html>
